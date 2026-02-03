@@ -1,13 +1,11 @@
-import os
+def add(a, b):
+    return a + b
 
-def run():
-    # GitHub Actions pass inputs as environment variables prefixed with INPUT_
-    name_to_greet = os.environ.get("INPUT_WHO_TO_GREET", "World")
-    print(f"Hello, {name_to_greet}!")
-    
-    # Setting an output for other steps to use
-    with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
-        print(f"time=noon", file=fh)
 
-if _name_ == "_main_":
-    run()
+# This runs only when you execute this file directly
+if __name__ == "__main__":
+    x = 10
+    y = 20
+    result = add(x, y)
+    print(f"Addition of {x} and {y} is {result}")
+
